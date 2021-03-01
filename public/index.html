@@ -10,7 +10,6 @@
         <script src="jspsych-6.1.0/plugins/jspsych-external-html.js"></script>
         <script src="jspsych-6.1.0/plugins/jspsych-html-button-response.js"></script>
         <link href="jspsych-6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"></link>
-        <script src = "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type = "text/javascript"></script>
         <script.src = 'https://code.jquery.com/jquery-3.4.1.min.js'></script>
     </head>
     <body></body>
@@ -70,7 +69,7 @@
             type: 'survey-text',
             var: a1 = myAnimals[2*i],
             var: a2 = myAnimals[(2*i)+1],
-            preamble: "<br>aaaaaaaaaaConsider a " + a1 + " and a " + a2 + ".<br><br>What are their similarities and differences? Please compare these two animals below, listing one similarity or difference per text box.<br><br>If you have extra boxes, just type n/a.",
+            preamble: "<br>Consider a " + a1 + " and a " + a2 + ".<br><br>What are their similarities and differences? Please compare these two animals below, listing one similarity or difference per text box.<br><br>If you have extra boxes, just type n/a.",
             questions: [
                 { prompt: "", required: "true", columns: 80, name: a1 + " " + a2},
                 { prompt: "", required: "true", columns: 80},
@@ -125,8 +124,6 @@
     //save data to database
     function save_data(data) {
         url = "http://node-express-env2.eba-tkcvuff5.us-east-2.elasticbeanstalk.com/data"
-        //url = "http://node-express-env2.eba-blahblahblah.us-east-2.elasticbeanstalk.com/data"
-        //url = location +"data";
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
@@ -134,6 +131,7 @@
             data
         }));
     }
+//NOT updating env for some reason *****************************************
 
     //run
     jsPsych.init({
