@@ -70,7 +70,7 @@
             type: 'survey-text',
             var: a1 = myAnimals[2*i],
             var: a2 = myAnimals[(2*i)+1],
-            preamble: "<br>Consider a " + a1 + " and a " + a2 + ".<br><br>What are their similarities and differences? Please compare these two animals below, listing one similarity or difference per text box.<br><br>If you have extra boxes, just type n/a.",
+            preamble: "<br>aaaaaaaaaaConsider a " + a1 + " and a " + a2 + ".<br><br>What are their similarities and differences? Please compare these two animals below, listing one similarity or difference per text box.<br><br>If you have extra boxes, just type n/a.",
             questions: [
                 { prompt: "", required: "true", columns: 80, name: a1 + " " + a2},
                 { prompt: "", required: "true", columns: 80},
@@ -124,7 +124,8 @@
 
     //save data to database
     function save_data(data) {
-        url = "http://node-express-env.eba-pdvaep5b.us-east-2.elasticbeanstalk.com/data"
+        url = "http://node-express-env2.eba-tkcvuff5.us-east-2.elasticbeanstalk.com/data"
+        //url = "http://node-express-env2.eba-blahblahblah.us-east-2.elasticbeanstalk.com/data"
         //url = location +"data";
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
