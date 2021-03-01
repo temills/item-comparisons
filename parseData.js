@@ -1,7 +1,7 @@
 // This file holds functions for parsing the data 
 
     //reformat data before saving
-function reformat_data(data) {
+function reformatData(data) {
     var numPairs = 10;
     var numRes = 8;
     var data1 = [];
