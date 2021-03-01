@@ -12,8 +12,8 @@ function reformatData(data) {
         data2.trial_order = i;
         data2.turk_code = data[0]["turk_code"];
         data2.subject_id = data[2]["responses"]["subject_id"];
-        var res = data[i+2]["responses"];
-        var animals = Object.keys(res)[0].split();
+        var res = data[i+4]["responses"];
+        var animals = Object.keys(res)[0].split(" ");
         data2.animal_1 = animals[0];
         data2.animal_2 = animals[1];
         for (var j=1; j<=numRes; j++) {
