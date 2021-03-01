@@ -25,12 +25,12 @@ function reformatData(data) {
             r = r.replace(/\//gi, "");
             data2[key] = r;
         }
-        var demo1 = data[numTrials + 4];
+        var demo1 = data[numPairs + 4];
         data2.age = Object.values(demo1)[0];
         data2.language = Object.values(demo1)[1];
         data2.nationality = Object.values(demo1)[2];
         data2.country = Object.values(demo1)[3];
-        var demo2 = data[numTrials + 5];
+        var demo2 = data[numPairs + 5];
         data2.gender = Object.values(demo2)[0];
         data2.student = Object.values(demo2)[1];
         data2.education = Object.values(demo2)[2];
