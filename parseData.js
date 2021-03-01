@@ -6,14 +6,14 @@ function reformatData(data) {
     var numRes = 8;
     //list of dictionaries, where each dictionary keeps the data for a single trial
     //Those dictionaries will become  rows in the data table
-    bigData = [];
+    var bigData = [];
     for (var i=0; i<numPairs; i++) {
-        data2 = {};
+        var data2 = {};
         data2.trial_order = i;
         data2.turk_code = data[0]["turk_code"];
         data2.subject_id = data[2]["responses"]["subject_id"];
-        res = data["responses"];
-        animals = Object.keys(res)[0].split();
+        var res = data["responses"];
+        var animals = Object.keys(res)[0].split();
         data2.animal_1 = animals[0];
         data2.animal_2 = animals[1];
         for (var j=1; j<=numRes; j++) {
@@ -25,7 +25,7 @@ function reformatData(data) {
             r = r.replace(/\//gi, "");
             data2[key] = r;
         }
-        var demo1 = data[numTrials + 4]
+        var demo1 = data[numTrials + 4];
         data2.age = Object.values(demo1)[0];
         data2.language = Object.values(demo1)[1];
         data2.nationality = Object.values(demo1)[2];
@@ -44,7 +44,7 @@ export function makeQuery(data) {
     console.log("Parsing data");
     data = reformatData(data);
     console.log("done");
-    var table = 'zoo_animals'
+    var table = 'zoo_animals';
     var keys = "";
     var keyArr = Object.keys(data[0]);
     for(var i=0; i<keyArr.length; i++) {
