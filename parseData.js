@@ -4,19 +4,18 @@
 function reformatData(data) {
     var numPairs = 10;
     var numRes = 8;
-    var data1 = [];
     //list of dictionaries, where each dictionary keeps the data for a single trial
     //Those dictionaries will become  rows in the data table
-    bigData = []
+    bigData = [];
     for (var i=0; i<numPairs; i++) {
-        data2 = {}
+        data2 = {};
         data2.trial_order = i;
-        data2.turk_code = data1[0]["turk_code"];
-        data2.subject_id = data1[2]["responses"]["subject_id"];
-        res = data1["responses"]
-        animals = Object.keys(res)[0].split()
-        data2.animal_1 = animals[0]
-        data2.animal_2 = animals[1]
+        data2.turk_code = data[0]["turk_code"];
+        data2.subject_id = data[2]["responses"]["subject_id"];
+        res = data["responses"];
+        animals = Object.keys(res)[0].split();
+        data2.animal_1 = animals[0];
+        data2.animal_2 = animals[1];
         for (var j=1; j<=numRes; j++) {
             var key = "comp_" + j;
             var r = Object.values(res)[j-1];
@@ -26,17 +25,18 @@ function reformatData(data) {
             r = r.replace(/\//gi, "");
             data2[key] = r;
         }
-        var demo1 = data1[numTrials + 4]
+        var demo1 = data[numTrials + 4]
         data2.age = Object.values(demo1)[0];
         data2.language = Object.values(demo1)[1];
         data2.nationality = Object.values(demo1)[2];
         data2.country = Object.values(demo1)[3];
-        var demo2 = data1[numTrials + 5]
+        var demo2 = data[numTrials + 5];
         data2.gender = Object.values(demo2)[0];
         data2.student = Object.values(demo2)[1];
         data2.education = Object.values(demo2)[2];
-        bigData.append(data2)
+        bigData.append(data2);
     }
+    return bigData;
 }
 
 export function makeQuery(data) {
