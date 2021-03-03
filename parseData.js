@@ -26,6 +26,7 @@ function reformatData(data) {
             r = r.replace(/"/gi, "");
             r = r.replace(/;/gi, "");
             r = r.replace(/\//gi, "");
+            r = r.replace(/\\/gi, "");
             data2[key] = r;
         }
         data[numPairs + 4] = JSON.parse(JSON.stringify(data[numPairs + 4]));
