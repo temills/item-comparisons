@@ -9,10 +9,13 @@ function reformatData(data) {
     var bigData = [];
     for (var i=0; i<numPairs; i++) {
         var data2 = {};
-        data2.trial_order = i;
+        data2.trial_order = i+1;
+        data[0] = JSON.parse(JSON.stringify(data[0]));
         data2.turk_code = data[0]["turk_code"];
-        data2.subject_id = data[2]["responses"]["subject_id"];
-        var res = data[i+4]["responses"];
+        data[2] = JSON.parse(JSON.stringify(data[2]));
+        data2.subject_id = JSON.parse(data[2]["responses"])["subject_id"];
+        data[i+4] = JSON.parse(JSON.stringify(data[i+4]));
+        var res = JSON.parse(data[i+4]["responses"]);
         var animals = Object.keys(res)[0].split(" ");
         data2.animal_1 = animals[0];
         data2.animal_2 = animals[1];
@@ -25,16 +28,18 @@ function reformatData(data) {
             r = r.replace(/\//gi, "");
             data2[key] = r;
         }
-        var demo1 = data[numPairs + 4];
+        data[numPairs + 4] = JSON.parse(JSON.stringify(data[numPairs + 4]));
+        var demo1 = JSON.parse(data[numPairs+4]["responses"]);
         data2.age = Object.values(demo1)[0];
         data2.language = Object.values(demo1)[1];
         data2.nationality = Object.values(demo1)[2];
         data2.country = Object.values(demo1)[3];
-        var demo2 = data[numPairs + 5];
+        data[numPairs + 5] = JSON.parse(JSON.stringify(data[numPairs + 5]));
+        var demo2 = JSON.parse(data[numPairs+5]["responses"]);
         data2.gender = Object.values(demo2)[0];
         data2.student = Object.values(demo2)[1];
         data2.education = Object.values(demo2)[2];
-        bigData.append(data2);
+        bigData.push(data2);
     }
     return bigData;
 }
