@@ -74,6 +74,5 @@ export function makeQuery(data) {
         valuesStr = valuesStr + values + ", ";
     }
     valuesStr = valuesStr.substring(0, valuesStr.length-2);
-    console.log(valuesStr);
-    //return "INSERT INTO " + table + keys + " " + "VALUES " + valuesStr + ";";
+    return "INSERT INTO " + table + keys + " " + "VALUES " + valuesStr + ";";
 }
