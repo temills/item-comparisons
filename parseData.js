@@ -15,8 +15,9 @@ function reformatData(data) {
         data[2] = JSON.parse(JSON.stringify(data[2]));
         data2.subject_id = JSON.parse(data[2]["responses"])["subject_id"];
         data[i+4] = JSON.parse(JSON.stringify(data[i+4]));
+        data2.rt = data[i+4]["rt"];
         var res = JSON.parse(data[i+4]["responses"]);
-        var animals = Object.keys(res)[0].split(" ");
+        var animals = Object.keys(res)[0].split(", ");
         data2.animal_1 = animals[0];
         data2.animal_2 = animals[1];
         for (var j=1; j<=numRes; j++) {
