@@ -21,7 +21,11 @@ function reformatData(data) {
         data2.animal_1 = animals[0];
         data2.animal_2 = animals[1];
         for (var j=1; j<=numRes; j++) {
-            var key = "comp_" + j;
+            var key = "";
+            if(j <= (numRes/2))
+                key = "sim_" + j;
+            else
+                key = "dif_" + (j-(numRes/2));
             var r = Object.values(res)[j-1];
             r = r.replace(/'/gi, "");
             r = r.replace(/"/gi, "");
@@ -51,7 +55,7 @@ export function makeQuery(data) {
     console.log("Parsing data");
     data = reformatData(data);
     console.log("done");
-    var table = 'zoo_animals';
+    var table = 'zoo_animals_sd';
     var keys = "";
     var keyArr = Object.keys(data[0]);
     for(var i=0; i<keyArr.length; i++) {
@@ -76,5 +80,6 @@ export function makeQuery(data) {
         valuesStr = valuesStr + values + ", ";
     }
     valuesStr = valuesStr.substring(0, valuesStr.length-2);
+    //console.log("INSERT INTO " + table + keys + " " + "VALUES " + valuesStr + ";");
     return "INSERT INTO " + table + keys + " " + "VALUES " + valuesStr + ";";
 }
