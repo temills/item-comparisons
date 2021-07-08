@@ -17,9 +17,9 @@ function reformatData(data) {
         data[i+4] = JSON.parse(JSON.stringify(data[i+4]));
         data2.rt = data[i+4]["rt"];
         var res = JSON.parse(data[i+4]["responses"]);
-        var animals = Object.keys(res)[0].split(", ");
-        data2.animal_1 = animals[0];
-        data2.animal_2 = animals[1];
+        var items = Object.keys(res)[0].split(", ");
+        data2.item_1 = items[0];
+        data2.item_2 = items[1];
         for (var j=1; j<=numRes; j++) {
             var key = "";
             if(j <= (numRes/2))
@@ -55,7 +55,7 @@ export function makeQuery(data) {
     console.log("Parsing data");
     data = reformatData(data);
     console.log("done");
-    var table = 'zoo_animals_sd';
+    var table = 'chain_restaurants';
     var keys = "";
     var keyArr = Object.keys(data[0]);
     for(var i=0; i<keyArr.length; i++) {

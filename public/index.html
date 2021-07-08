@@ -15,9 +15,14 @@
     <body></body>
     <script>
 
-    animals = ["leopard", "chimp", "beetle", "zebra", "sea lion", "tarantula", "giraffe", "bull", "whale", "rabbit", "lion", "hippo", "baboon", "monkey", "snake", "tiger", "panther", "kangaroo", "owl", "elephant", "rhino", "cheetah", "gazelle", "alligator", "penguin", "panda", "parrot", "eagle", "polar bear", "koala", "ostrich", "crocodile", "dolphin", "lemur", "turtle", "gorilla", "wolf", "shark", "cow", "peacock", "jaguar", "camal", "platypus", "flamingo", "duck", "sloth", "seal", "grizzly bear", "lizard", "fish"];
+    category = "chain restaurants";
+    
+    items = ['Mcdonalds', 'Burger King', 'Wendys', 'Taco Bell', 'Applebees', 'Chilis', 'Olive Garden', 'Arbys', 'Pizza Hut', 'Chipotle', 'TGI Fridays', 'Subway', 'Red Lobster', 'Chick Fil A', 'Kentucky Fried Chicken', 'Outback Steakhouse', 'Red Robin', 'Dennys', 'Cheesecake Factory', 'Panera', 'Buffalo Wild Wings', 'Popeyes', 'Dominos', 'IHOP', 'Dairy Queen', 'Five Guys', 'Hardees', 'Panda Express', 'Starbucks', 'Cracker Barrel', 'Jimmy Johns', 'Sonic', 'Jack in the Box', 'Ruby Tuesdays', 'PF Changs', 'Hooters', 'Papa Johns', 'Texas Roadhouse', 'Little Ceasars', 'Dunkin Donuts', 'Long John Silvers', 'Maggianos'];
+
+    //items = ["leopard", "chimp", "beetle", "zebra", "sea lion", "tarantula", "giraffe", "bull", "whale", "rabbit", "lion", "hippo", "baboon", "monkey", "snake", "tiger", "panther", "kangaroo", "owl", "elephant", "rhino", "cheetah", "gazelle", "alligator", "penguin", "panda", "parrot", "eagle", "polar bear", "koala", "ostrich", "crocodile", "dolphin", "lemur", "turtle", "gorilla", "wolf", "shark", "cow", "peacock", "jaguar", "camal", "platypus", "flamingo", "duck", "sloth", "seal", "grizzly bear", "lizard", "fish"];
     numTrials = 10;
-    var myAnimals = jsPsych.randomization.sampleWithoutReplacement(animals, numTrials*2);
+    var myItems = jsPsych.randomization.sampleWithoutReplacement(items, numTrials*2);
+
 
     // meta-variables - fill in
     var turk_code = jsPsych.randomization.randomID(12);
@@ -55,7 +60,7 @@
     //set instructions
     var instructions = {
         type: "html-keyboard-response",
-        stimulus: "In this experiment, you will be asked to compare two zoo animals. Please list whatever similarities and differences come to mind. <br><br>Press any key to begin."
+        stimulus: "In this experiment, you will be asked to compare two " + category + ". Please list whatever similarities and differences come to mind. <br><br>Press any key to begin."
     };
 
     timeline.push(instructions)
@@ -65,9 +70,9 @@
     for (var i = 0; i < numTrials; i++) {
         trial = {
             type: 'survey-text',
-            var: a1 = myAnimals[2*i],
-            var: a2 = myAnimals[(2*i)+1],
-            preamble: "<br>Consider a " + a1 + " and a " + a2 + ".<br><br>What are their similarities and differences? Please compare these two animals below, listing one similarity or difference per text box.<br><br>If you have extra boxes, just type n/a.",
+            var: a1 = myItems[2*i],
+            var: a2 = myItems[(2*i)+1],
+            preamble: "<br>Consider <b>" + a1 + "</b> and <b>" + a2 + "</b>.<br><br>What are their similarities and differences? Please compare these two " + category + " below, listing one similarity or difference per text box.<br><br>If you have extra boxes, just type n/a.",
             questions: [
                 { prompt: "Similarities:", required: "true", columns: 80, name: a1 + ", " + a2},
                 { prompt: "", required: "true", columns: 80},
@@ -129,8 +134,6 @@
             data
         }));
     }
-//NOT updating env for some reason *****************************************
-
     //run
     jsPsych.init({
         timeline
