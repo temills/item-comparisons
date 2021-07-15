@@ -15,9 +15,10 @@
     <body></body>
     <script>
 
-    category = "chain restaurants";
+    category = "vegetables";
     
-    items = ['Mcdonalds', 'Burger King', 'Wendys', 'Taco Bell', 'Applebees', 'Chilis', 'Olive Garden', 'Arbys', 'Pizza Hut', 'Chipotle', 'TGI Fridays', 'Subway', 'Red Lobster', 'Chick Fil A', 'Kentucky Fried Chicken', 'Outback Steakhouse', 'Red Robin', 'Dennys', 'Cheesecake Factory', 'Panera', 'Buffalo Wild Wings', 'Popeyes', 'Dominos', 'IHOP', 'Dairy Queen', 'Five Guys', 'Hardees', 'Panda Express', 'Starbucks', 'Cracker Barrel', 'Jimmy Johns', 'Sonic', 'Jack in the Box', 'Ruby Tuesdays', 'PF Changs', 'Hooters', 'Papa Johns', 'Texas Roadhouse', 'Little Ceasars', 'Dunkin Donuts', 'Long John Silvers', 'Maggianos'];
+    //items = ['Mcdonalds', 'Burger King', 'Wendys', 'Taco Bell', 'Applebees', 'Chilis', 'Olive Garden', 'Arbys', 'Pizza Hut', 'Chipotle', 'TGI Fridays', 'Subway', 'Red Lobster', 'Chick Fil A', 'Kentucky Fried Chicken', 'Outback Steakhouse', 'Red Robin', 'Dennys', 'Cheesecake Factory', 'Panera', 'Buffalo Wild Wings', 'Popeyes', 'Dominos', 'IHOP', 'Dairy Queen', 'Five Guys', 'Hardees', 'Panda Express', 'Starbucks', 'Cracker Barrel', 'Jimmy Johns', 'Sonic', 'Jack in the Box', 'Ruby Tuesdays', 'PF Changs', 'Hooters', 'Papa Johns', 'Texas Roadhouse', 'Little Ceasars', 'Dunkin Donuts', 'Long John Silvers', 'Maggianos'];
+    items = ['carrots', 'broccoli', 'lettuce', 'peas', 'potato', 'onion', 'cauliflower', 'corn', 'green beans', 'tomato', 'cucumber', 'spinach', 'squash', 'celery', 'pepper', 'eggplant', 'cabbage', 'asparagus', 'brussel sprout', 'kale', 'turnip', 'zucchini', 'garlic', 'pumpkin', 'beets', 'mushrooms', 'radish', 'okra', 'yam', 'sweet potato', 'arugula', 'sprouts ', 'artichoke', 'parsnip', 'bok choy', 'lima beans', 'avocado', 'snap peas', 'leek', 'collard greens']
 
     //items = ["leopard", "chimp", "beetle", "zebra", "sea lion", "tarantula", "giraffe", "bull", "whale", "rabbit", "lion", "hippo", "baboon", "monkey", "snake", "tiger", "panther", "kangaroo", "owl", "elephant", "rhino", "cheetah", "gazelle", "alligator", "penguin", "panda", "parrot", "eagle", "polar bear", "koala", "ostrich", "crocodile", "dolphin", "lemur", "turtle", "gorilla", "wolf", "shark", "cow", "peacock", "jaguar", "camal", "platypus", "flamingo", "duck", "sloth", "seal", "grizzly bear", "lizard", "fish"];
     numTrials = 10;
@@ -72,7 +73,7 @@
             type: 'survey-text',
             var: a1 = myItems[2*i],
             var: a2 = myItems[(2*i)+1],
-            preamble: "<br>Consider <b>" + a1 + "</b> and <b>" + a2 + "</b>.<br><br>What are their similarities and differences? Please compare these two " + category + " below, listing one similarity or difference per text box.<br><br>If you have extra boxes, just type n/a.",
+            preamble: "<br>Consider a <b>" + a1 + "</b> and a <b>" + a2 + "</b>.<br><br>What are their similarities and differences? Please compare these two " + category + " below, listing one similarity or difference per text box.<br><br>If you have extra boxes, just type n/a.",
             questions: [
                 { prompt: "Similarities:", required: "true", columns: 80, name: a1 + ", " + a2},
                 { prompt: "", required: "true", columns: 80},
