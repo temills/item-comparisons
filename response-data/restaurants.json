@@ -1,6 +1,3 @@
-brightly colored logo, sit-down, healthy, large menu, fast, price, fun/energetic/lively, convenient, well-lit, fancy, long hours, number of options/variety, reputation, how often you frequent, how often you think about, how much you like, well-known, decor, popular, loud/quiet, family friendly, controversial, traditional, unique, comfortable, many locations, casual, dirty, quality,
-good: think about often, like, is popular, has many locations, unique
-bad: healthy, brightly colored logo, is lively, variety, well decorated, expensive, quick, casual
 [
 	{
 		"age" : 51,
@@ -5218,8 +5215,7 @@ bad: healthy, brightly colored logo, is lively, variety, well decorated, expensi
 		"sim_4" : "na",
 		"dif_1" : "Dunkin Donuts is a doughnut store Jack in the Box is a more general fast food place.",
 		"dif_2" : "Dunkin Donuts is mostly a Northeastern thing, while Jack in the Box is regional to somewhere more out West.",
-		"dif_3" : "Dunkin Donuts has been in a weird existential position for a while where its current owners keep wanting to downplay
-					the fact that they sell doughnuts for some reason Jack in the Box seems to content to be just another hamburger place.",
+		"dif_3" : "Dunkin Donuts has been in a weird existential position for a while where its current owners keep wanting to downplay the fact that they sell doughnuts for some reason Jack in the Box seems to content to be just another hamburger place.",
 		"dif_4" : "na",
 		"trial_order" : 7,
 		"rt" : 128006
